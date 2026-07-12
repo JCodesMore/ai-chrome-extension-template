@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "AI Extension Template",
+  "version": "0.1.0",
+  "description": "Replace me — scaffolded by ai-chrome-extension-template.",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Extension Template"
+  }
+}

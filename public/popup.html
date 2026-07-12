@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* Minimal, framework-free, dark-mode aware. Replace freely. */
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --fg: #1a1a1a;
+        --muted: #6b7280;
+        --accent: #2d4f96;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1b1c1f;
+          --fg: #f3f4f6;
+          --muted: #9ca3af;
+          --accent: #8ab4ff;
+        }
+      }
+      body {
+        width: 320px;
+        margin: 0;
+        padding: 16px;
+        font-family:
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+      }
+      #app h1 {
+        margin: 0 0 2px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      #version {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      #status {
+        margin-top: 12px;
+        font-size: 13px;
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1 id="name">AI Extension Template</h1>
+      <div id="version">v—</div>
+      <div id="status" role="status">Connecting…</div>
+    </div>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

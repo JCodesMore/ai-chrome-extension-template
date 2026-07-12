@@ -1,0 +1,43 @@
+{
+  "name": "ai-chrome-extension-template",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Starter template where an AI coding agent autonomously develops an MV3 Chrome extension with a full CDP-driven dev loop.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "browser": "node tools/browser.mjs",
+    "reload": "npm run build && node tools/reload.mjs",
+    "smoke": "node tools/smoke.mjs",
+    "shot": "node tools/shot.mjs",
+    "send": "node tools/send.mjs",
+    "package": "node tools/package.mjs",
+    "release": "node tools/release.mjs",
+    "stop": "node tools/stop.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "gate": "npm run format:check && npm run lint && npm run typecheck && npm run test",
+    "sync": "node scripts/sync-skills.mjs",
+    "prepare": "git config core.hooksPath .githooks || exit 0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@puppeteer/browsers": "^2.4.0",
+    "@types/chrome": "^0.2.2",
+    "esbuild": "^0.28.1",
+    "eslint": "^10.6.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.1",
+    "vitest": "^4.1.9"
+  }
+}

@@ -1,0 +1,57 @@
+# Push a tag like v1.2.3 (matching public/manifest.json's version) and this
+# builds the store-variant zip, runs the full quality gate, and publishes a
+# GitHub Release with the zip attached. workflow_dispatch runs the same build
+# as a dry run (artifact only, no release). Nothing here is product-specific —
+# the release title and artifact name are derived from the manifest.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run gate
+      - name: Tag must match the manifest version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          VER="$(node -p "require('./public/manifest.json').version")"
+          if [ "v$VER" != "$GITHUB_REF_NAME" ]; then
+            echo "tag $GITHUB_REF_NAME does not match manifest version v$VER" >&2
+            exit 1
+          fi
+      - run: npm run package
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="$(node -p "const m = require('./public/manifest.json'); m.name + ' ' + m.version")"
+          gh release create "$GITHUB_REF_NAME" release/*.zip \
+            --verify-tag \
+            --title "$TITLE" \
+            --generate-notes
+      - name: Derive artifact name from the manifest
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        id: slug
+        run: |
+          SLUG="$(node -p "require('./public/manifest.json').name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-\$/g,'')")"
+          echo "name=$SLUG" >> "$GITHUB_OUTPUT"
+      - name: Upload dry-run artifact
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.slug.outputs.name }}-zip
+          path: release/*.zip

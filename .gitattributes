@@ -1,0 +1,4 @@
+# LF everywhere, on every machine — Prettier enforces LF, so CRLF checkouts
+# (e.g. fresh worktrees under core.autocrlf=true) would fail the format gate.
+* text=auto eol=lf
+*.png binary
