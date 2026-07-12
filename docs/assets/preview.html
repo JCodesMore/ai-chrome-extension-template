@@ -1,0 +1,260 @@
+<!doctype html>
+<!-- Source for the README preview image. Regenerate the PNG with:
+     npm run browser && node scripts/gen-preview.mjs -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1280px;
+        height: 640px;
+        overflow: hidden;
+      }
+      body {
+        font-family:
+          'Segoe UI',
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background:
+          radial-gradient(900px 500px at 15% -10%, rgba(109, 141, 255, 0.16), transparent 60%),
+          radial-gradient(800px 480px at 95% 110%, rgba(160, 109, 255, 0.14), transparent 60%),
+          linear-gradient(155deg, #0b0f1a 0%, #10162a 55%, #0b0f1a 100%);
+        color: #e8ecf6;
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        padding: 0 72px;
+      }
+      .left {
+        flex: 1.15;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        color: #9fb3ff;
+        border: 1px solid rgba(140, 160, 255, 0.35);
+        background: rgba(109, 141, 255, 0.08);
+        border-radius: 999px;
+        padding: 7px 16px;
+        margin-bottom: 26px;
+      }
+      h1 {
+        font-size: 54px;
+        line-height: 1.12;
+        font-weight: 750;
+        letter-spacing: -0.015em;
+      }
+      h1 .grad {
+        background: linear-gradient(92deg, #7f9dff 0%, #b48cff 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .tag {
+        margin-top: 18px;
+        font-size: 21px;
+        line-height: 1.45;
+        color: #aab4c8;
+        max-width: 560px;
+      }
+      .term {
+        margin-top: 34px;
+        width: 560px;
+        background: #0d1220;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 14px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+        overflow: hidden;
+      }
+      .term-bar {
+        display: flex;
+        gap: 7px;
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .dot {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+      }
+      .term-body {
+        padding: 18px 20px 20px;
+        font-family: 'Cascadia Code', 'SF Mono', Consolas, monospace;
+        font-size: 17px;
+        line-height: 1.75;
+      }
+      .prompt {
+        color: #7f9dff;
+        font-weight: 600;
+      }
+      .cmd {
+        color: #f1f4fb;
+      }
+      .checks {
+        margin-top: 6px;
+        color: #55e0a0;
+        font-size: 15.5px;
+      }
+      .checks .dim {
+        color: #7d879c;
+      }
+      /* Right: browser mock */
+      .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .browser {
+        width: 460px;
+        background: #141b2e;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+        overflow: hidden;
+      }
+      .b-bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        background: #0f1524;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .url {
+        flex: 1;
+        font-size: 12.5px;
+        color: #8d97ad;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-family: Consolas, monospace;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .b-body {
+        padding: 30px 28px 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .ring {
+        width: 158px;
+        height: 158px;
+        border-radius: 50%;
+        background: conic-gradient(#7f9dff 0deg, #b48cff 262deg, rgba(255, 255, 255, 0.08) 262deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ring-in {
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        background: #141b2e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .time {
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+      .time-sub {
+        font-size: 12.5px;
+        color: #8d97ad;
+        margin-top: 2px;
+      }
+      .block-line {
+        margin-top: 20px;
+        font-size: 14.5px;
+        color: #aab4c8;
+      }
+      .block-line b {
+        color: #e8ecf6;
+      }
+      .btn {
+        margin-top: 18px;
+        background: linear-gradient(92deg, #6d8dff, #a06dff);
+        color: #fff;
+        font-weight: 650;
+        font-size: 15px;
+        border-radius: 10px;
+        padding: 11px 46px;
+      }
+      .toast {
+        margin-top: 22px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(52, 211, 153, 0.1);
+        border: 1px solid rgba(52, 211, 153, 0.35);
+        color: #55e0a0;
+        border-radius: 12px;
+        padding: 11px 20px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <div class="pill">✦&nbsp; POWERED BY AI AGENTS — CLAUDE CODE · CODEX</div>
+      <h1>Make any Chrome extension<br /><span class="grad">with AI agents</span></h1>
+      <div class="tag">
+        Describe it. Your agent builds it, tests it in a real browser, and ships it.
+      </div>
+      <div class="term">
+        <div class="term-bar">
+          <div class="dot" style="background: #ff5f57"></div>
+          <div class="dot" style="background: #febc2e"></div>
+          <div class="dot" style="background: #28c840"></div>
+        </div>
+        <div class="term-body">
+          <div>
+            <span class="prompt">❯ /chrome-extension</span>
+            <span class="cmd">a pomodoro timer that blocks distracting sites</span>
+          </div>
+          <div class="checks">✓ built &amp; reloaded into a live browser</div>
+          <div class="checks">✓ smoke checks passed · screenshot verified</div>
+          <div class="checks">
+            ✓ packaged <span class="dim">release/focus-timer-v1.0.0.zip</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="browser">
+        <div class="b-bar">
+          <div class="dot" style="background: rgba(255, 255, 255, 0.18)"></div>
+          <div class="dot" style="background: rgba(255, 255, 255, 0.18)"></div>
+          <div class="url">chrome-extension://…/popup.html</div>
+        </div>
+        <div class="b-body">
+          <div class="ring">
+            <div class="ring-in">
+              <div class="time">21:47</div>
+              <div class="time-sub">focus session</div>
+            </div>
+          </div>
+          <div class="block-line">Blocking <b>4 distracting sites</b></div>
+          <div class="btn">Pause</div>
+        </div>
+      </div>
+      <div class="toast">✓&nbsp; All checks passed — ready for the Chrome Web Store</div>
+    </div>
+  </body>
+</html>

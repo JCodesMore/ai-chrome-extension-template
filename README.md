@@ -17,6 +17,8 @@ you a finished extension ready for the Chrome Web Store.
 
 ---
 
+![AI Chrome Extension Template — describe it, your AI agent builds it, tests it, and ships it](docs/assets/preview.png)
+
 ## Quick Start
 
 **1. Make your own copy of this template**
@@ -57,11 +59,11 @@ Chrome Web Store.
 Anything you can describe, really:
 
 - _"A pomodoro timer that blocks distracting sites during focus sessions."_
-- _"Save every article I read to a reading list with one click."_
-- _"Show the calorie count next to recipes on cooking sites."_
-- _"Replace every photo of my ex on the internet with pictures of dogs."_
+- _"Save any page to a reading list with one click, so I can get through it later."_
+- _"Hide YouTube Shorts and recommendations so I stop doomscrolling."_
+- _"Group my open tabs by site and close all the duplicates."_
 - _"A new-tab page that shows my top 3 todos and nothing else."_
-- _"Mute any tab that starts playing sound automatically."_
+- _"Copy the current page as a clean Markdown link for my notes."_
 
 The agent turns your words into a plan, asks about anything genuinely ambiguous, and
 builds the simplest version that does the job — then you can keep asking for more:
