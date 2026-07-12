@@ -1,0 +1,136 @@
+<!doctype html>
+<!-- Walkthrough image 1: the "Use this template" button + dropdown (GitHub dark UI).
+     Regenerate PNGs with: npm run browser && node scripts/gen-preview.mjs -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 900px;
+        height: 240px;
+        overflow: hidden;
+      }
+      body {
+        font-family:
+          'Segoe UI',
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #0d1117;
+        color: #e6edf3;
+        padding: 30px 36px;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .repo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 19px;
+      }
+      .repo .owner {
+        color: #8d96a0;
+      }
+      .repo .name {
+        font-weight: 600;
+        color: #4493f8;
+      }
+      .chip {
+        font-size: 12px;
+        color: #8d96a0;
+        border: 1px solid #30363d;
+        border-radius: 999px;
+        padding: 3px 10px;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 7px 14px;
+        border: 1px solid rgba(240, 246, 252, 0.12);
+      }
+      .btn.gray {
+        background: #21262d;
+        color: #c9d1d9;
+      }
+      .btn.green {
+        background: #238636;
+        color: #ffffff;
+        box-shadow: 0 0 0 3px rgba(46, 160, 67, 0.35);
+      }
+      .caret {
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid currentColor;
+        margin-left: 2px;
+      }
+      .menu {
+        margin-top: 10px;
+        margin-left: auto;
+        width: 270px;
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 10px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+        overflow: hidden;
+        font-size: 14px;
+      }
+      .item {
+        padding: 11px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .item.hot {
+        background: #1f6feb;
+        color: #ffffff;
+        font-weight: 600;
+      }
+      .item.dim {
+        color: #c9d1d9;
+      }
+      .pointer {
+        width: 0;
+        height: 0;
+        border-left: 8px solid #ffffff;
+        border-top: 4px solid transparent;
+        border-bottom: 7px solid transparent;
+        transform: rotate(-15deg);
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="repo">
+        <span class="owner">JCodesMore /</span>
+        <span class="name">ai-chrome-extension-template</span>
+        <span class="chip">Public template</span>
+      </div>
+      <div class="actions">
+        <span class="btn gray">☆ Star</span>
+        <span class="btn green">Use this template <span class="caret"></span></span>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="item hot">Create a new repository <span class="pointer"></span></div>
+      <div class="item dim">Open in a codespace</div>
+    </div>
+  </body>
+</html>

@@ -53,11 +53,17 @@ loop works on this machine:
 2. Run `npm install` (idempotent — fast when already installed; it also wires the
    pre-commit gate hook via the `prepare` script). If it isn't wired afterward, run
    `git config core.hooksPath .githooks` yourself.
-3. `npm run browser` — first run downloads Chrome for Testing (~200–300 MB, one-time).
+3. Guard the remote: if `git remote get-url origin` points at
+   `JCodesMore/ai-chrome-extension-template` (the public template), the user cloned the
+   template directly. Tell them, then either help them create their own repo (GitHub's
+   **Use this template** button, or `gh repo create` with their consent) and repoint
+   `origin` there, or continue purely locally. **Never push to, or open pull requests
+   against, the template repository.**
+4. `npm run browser` — first run downloads Chrome for Testing (~200–300 MB, one-time).
    Note the extension ID from the JSON output; never hardcode it.
-4. `npm run reload` then `npm run smoke` — all checks must pass on the pristine scaffold.
+5. `npm run reload` then `npm run smoke` — all checks must pass on the pristine scaffold.
    View `tools/screenshots/smoke-popup.png` to confirm the popup renders.
-5. If any step fails, fix the environment first using the troubleshooting table in
+6. If any step fails, fix the environment first using the troubleshooting table in
    `docs/dev-loop.md` (port collision → `CDP_PORT`, download blocked → `BROWSER_EXE`,
    etc.). Do not start feature work on a broken loop.
 
@@ -174,6 +180,8 @@ When the MVP task list is done, verify the assembled product, not just the parts
 - Don't leave `tools/smoke.mjs` at scaffold level while shipping real features — smoke
   coverage must grow with the product.
 - Don't hand-edit anything in `dist/` — it is build output.
+- Don't push to or open pull requests against `JCodesMore/ai-chrome-extension-template` —
+  the user's extension lives in their own repository (see the Phase 0 remote guard).
 
 ## Completion report
 

@@ -1,0 +1,156 @@
+<!doctype html>
+<!-- Walkthrough image 2: the "Create a new repository" form (GitHub dark UI).
+     Regenerate PNGs with: npm run browser && node scripts/gen-preview.mjs -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 900px;
+        height: 430px;
+        overflow: hidden;
+      }
+      body {
+        font-family:
+          'Segoe UI',
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #0d1117;
+        color: #e6edf3;
+        padding: 34px 40px;
+      }
+      h2 {
+        font-size: 24px;
+        font-weight: 650;
+      }
+      .card {
+        margin-top: 22px;
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 10px;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+      }
+      .card .label {
+        font-weight: 600;
+      }
+      .card .sub {
+        color: #8d96a0;
+        font-size: 13px;
+        margin-top: 3px;
+      }
+      .pill {
+        background: #21262d;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        padding: 7px 14px;
+        font-size: 13.5px;
+        color: #c9d1d9;
+      }
+      .section {
+        margin-top: 28px;
+      }
+      .field-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 10px;
+      }
+      .flabel {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 18px;
+      }
+      .input {
+        background: #0d1117;
+        border: 1px solid #1f6feb;
+        box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.3);
+        border-radius: 6px;
+        padding: 8px 14px;
+        font-size: 14.5px;
+        width: 340px;
+        color: #e6edf3;
+      }
+      .input .cursor {
+        display: inline-block;
+        width: 1.5px;
+        height: 16px;
+        background: #e6edf3;
+        vertical-align: -3px;
+        margin-left: 2px;
+      }
+      .slash {
+        color: #8d96a0;
+        font-size: 18px;
+      }
+      .note {
+        margin-top: 10px;
+        font-size: 13px;
+        color: #8d96a0;
+      }
+      .bottom {
+        margin-top: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .vis {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        color: #c9d1d9;
+      }
+      .radio {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 4px solid #1f6feb;
+        background: #ffffff;
+      }
+      .create {
+        background: #238636;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        border: 1px solid rgba(240, 246, 252, 0.12);
+        border-radius: 6px;
+        padding: 9px 18px;
+        box-shadow: 0 0 0 3px rgba(46, 160, 67, 0.35);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Create a new repository</h2>
+    <div class="card">
+      <div>
+        <div class="label">Start with a template</div>
+        <div class="sub">Templates pre-configure your repository with files.</div>
+      </div>
+      <span class="pill">JCodesMore/ai-chrome-extension-template ▾</span>
+    </div>
+    <div class="section">
+      <div class="flabel">Owner / Repository name</div>
+      <div class="field-row">
+        <span class="pill">your-username ▾</span>
+        <span class="slash">/</span>
+        <span class="input">my-focus-timer<span class="cursor"></span></span>
+      </div>
+      <div class="note">Name it after your extension idea — this becomes your project.</div>
+    </div>
+    <div class="bottom">
+      <div class="vis"><span class="radio"></span> Public &nbsp;·&nbsp; or choose Private</div>
+      <span class="create">Create repository</span>
+    </div>
+  </body>
+</html>

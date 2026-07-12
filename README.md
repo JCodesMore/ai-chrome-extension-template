@@ -21,24 +21,41 @@ you a finished extension ready for the Chrome Web Store.
 
 ## Quick Start
 
-**1. Make your own copy of this template**
+> **Important:** don't clone this template repo directly. Make your own copy with
+> GitHub's **Use this template** button — that way your extension (and everything your
+> AI agent commits, pushes, and releases) lives in _your_ repository. Pull requests
+> opened against this template with generated extensions will be closed.
 
-On this repo's GitHub page, click the green **Use this template** button → **Create a new
-repository**. Name it after your idea, then open your new repository on your computer
-(clone it with GitHub Desktop, or in a terminal):
+**1. Click "Use this template" → "Create a new repository"**
+
+At the top of [this repo's page](https://github.com/JCodesMore/ai-chrome-extension-template),
+signed in to GitHub (the button is hidden when signed out — accounts are free):
+
+![Click Use this template, then Create a new repository](docs/assets/guide-use-template.png)
+
+**2. Name it and create it**
+
+Name it after your idea, keep **Public** (or choose Private), and click
+**Create repository**:
+
+![Name your repository and click Create repository](docs/assets/guide-create-repo.png)
+
+**3. Open your new repository on your computer**
+
+Clone it with [GitHub Desktop](https://desktop.github.com/), or in a terminal:
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/YOUR-NEW-REPOSITORY.git
 cd YOUR-NEW-REPOSITORY
 ```
 
-**2. Start your AI agent in that folder** — [Claude Code](https://docs.anthropic.com/en/docs/claude-code) recommended:
+**4. Start your AI agent in that folder** — [Claude Code](https://docs.anthropic.com/en/docs/claude-code) recommended:
 
 ```bash
 claude
 ```
 
-**3. Tell it what you want:**
+**5. Tell it what you want:**
 
 ```
 /chrome-extension a pomodoro timer that blocks distracting sites during focus sessions
