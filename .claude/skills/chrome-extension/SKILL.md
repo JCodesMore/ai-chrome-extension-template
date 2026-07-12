@@ -45,11 +45,14 @@ upload).
 
 ## Phase 0 — Bring up the loop
 
-Before anything else, prove the feedback loop works on this machine:
+Assume the user just cloned this template and has done nothing else — no installs, no
+setup. You own the entire environment bring-up. Before anything else, prove the feedback
+loop works on this machine:
 
 1. Read `AGENTS.md` (if not already in context) and `docs/dev-loop.md`.
-2. `npm install` if `node_modules/` is missing. Then make sure the pre-commit gate is
-   wired: `git config core.hooksPath .githooks` (safe to re-run).
+2. Run `npm install` (idempotent — fast when already installed; it also wires the
+   pre-commit gate hook via the `prepare` script). If it isn't wired afterward, run
+   `git config core.hooksPath .githooks` yourself.
 3. `npm run browser` — first run downloads Chrome for Testing (~200–300 MB, one-time).
    Note the extension ID from the JSON output; never hardcode it.
 4. `npm run reload` then `npm run smoke` — all checks must pass on the pristine scaffold.
