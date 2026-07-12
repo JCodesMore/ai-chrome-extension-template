@@ -4,6 +4,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=block"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
@@ -17,244 +23,86 @@
         overflow: hidden;
       }
       body {
-        font-family:
-          'Segoe UI',
-          system-ui,
-          -apple-system,
-          sans-serif;
-        background:
-          radial-gradient(900px 500px at 15% -10%, rgba(109, 141, 255, 0.16), transparent 60%),
-          radial-gradient(800px 480px at 95% 110%, rgba(160, 109, 255, 0.14), transparent 60%),
-          linear-gradient(155deg, #0b0f1a 0%, #10162a 55%, #0b0f1a 100%);
-        color: #e8ecf6;
+        font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+        background: #f5f5f7;
+        color: #1d1d1f;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 56px;
-        padding: 0 72px;
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 14px; /* slight optical lift */
       }
-      .left {
-        flex: 1.15;
+      .dots {
+        display: flex;
+        gap: 9px;
+        margin-bottom: 40px;
       }
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.14em;
-        color: #9fb3ff;
-        border: 1px solid rgba(140, 160, 255, 0.35);
-        background: rgba(109, 141, 255, 0.08);
-        border-radius: 999px;
-        padding: 7px 16px;
-        margin-bottom: 26px;
+      .dots span {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
       }
       h1 {
-        font-size: 54px;
-        line-height: 1.12;
-        font-weight: 750;
-        letter-spacing: -0.015em;
-      }
-      h1 .grad {
-        background: linear-gradient(92deg, #7f9dff 0%, #b48cff 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .tag {
-        margin-top: 18px;
-        font-size: 21px;
-        line-height: 1.45;
-        color: #aab4c8;
-        max-width: 560px;
-      }
-      .term {
-        margin-top: 34px;
-        width: 560px;
-        background: #0d1220;
-        border: 1px solid rgba(255, 255, 255, 0.09);
-        border-radius: 14px;
-        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-        overflow: hidden;
-      }
-      .term-bar {
-        display: flex;
-        gap: 7px;
-        padding: 12px 16px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      }
-      .dot {
-        width: 11px;
-        height: 11px;
-        border-radius: 50%;
-      }
-      .term-body {
-        padding: 18px 20px 20px;
-        font-family: 'Cascadia Code', 'SF Mono', Consolas, monospace;
-        font-size: 17px;
-        line-height: 1.75;
-      }
-      .prompt {
-        color: #7f9dff;
-        font-weight: 600;
-      }
-      .cmd {
-        color: #f1f4fb;
-      }
-      .checks {
-        margin-top: 6px;
-        color: #55e0a0;
-        font-size: 15.5px;
-      }
-      .checks .dim {
-        color: #7d879c;
-      }
-      /* Right: browser mock */
-      .right {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .browser {
-        width: 460px;
-        background: #141b2e;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 16px;
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
-        overflow: hidden;
-      }
-      .b-bar {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 12px 16px;
-        background: #0f1524;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      }
-      .url {
-        flex: 1;
-        font-size: 12.5px;
-        color: #8d97ad;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 999px;
-        padding: 6px 14px;
-        font-family: Consolas, monospace;
-        white-space: nowrap;
-        overflow: hidden;
-      }
-      .b-body {
-        padding: 30px 28px 28px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .ring {
-        width: 158px;
-        height: 158px;
-        border-radius: 50%;
-        background: conic-gradient(#7f9dff 0deg, #b48cff 262deg, rgba(255, 255, 255, 0.08) 262deg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .ring-in {
-        width: 128px;
-        height: 128px;
-        border-radius: 50%;
-        background: #141b2e;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-      .time {
-        font-size: 36px;
-        font-weight: 700;
-        letter-spacing: 0.01em;
-      }
-      .time-sub {
-        font-size: 12.5px;
-        color: #8d97ad;
-        margin-top: 2px;
-      }
-      .block-line {
-        margin-top: 20px;
-        font-size: 14.5px;
-        color: #aab4c8;
-      }
-      .block-line b {
-        color: #e8ecf6;
-      }
-      .btn {
-        margin-top: 18px;
-        background: linear-gradient(92deg, #6d8dff, #a06dff);
-        color: #fff;
+        font-size: 68px;
         font-weight: 650;
-        font-size: 15px;
-        border-radius: 10px;
-        padding: 11px 46px;
+        letter-spacing: -0.032em;
+        line-height: 1.05;
       }
-      .toast {
+      .sub {
         margin-top: 22px;
-        display: flex;
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        color: #6e6e73;
+      }
+      .card {
+        margin-top: 56px;
+        display: inline-flex;
         align-items: center;
-        gap: 10px;
-        background: rgba(52, 211, 153, 0.1);
-        border: 1px solid rgba(52, 211, 153, 0.35);
-        color: #55e0a0;
-        border-radius: 12px;
-        padding: 11px 20px;
-        font-size: 15px;
+        background: #ffffff;
+        border: 1px solid #e4e4e9;
+        border-radius: 16px;
+        padding: 22px 30px;
+        box-shadow:
+          0 1px 2px rgba(0, 0, 0, 0.04),
+          0 16px 40px rgba(0, 0, 0, 0.06);
+        font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace;
+        font-size: 20px;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+      }
+      .card .cmd {
+        color: #1d1d1f;
         font-weight: 600;
+      }
+      .card .idea {
+        color: #86868b;
+        margin-left: 12px;
+      }
+      .card .cursor {
+        display: inline-block;
+        width: 2px;
+        height: 24px;
+        background: #1d1d1f;
+        margin-left: 10px;
+        vertical-align: -4px;
       }
     </style>
   </head>
   <body>
-    <div class="left">
-      <div class="pill">✦&nbsp; POWERED BY AI AGENTS — CLAUDE CODE · CODEX</div>
-      <h1>Make any Chrome extension<br /><span class="grad">with AI agents</span></h1>
-      <div class="tag">
-        Describe it. Your agent builds it, tests it in a real browser, and ships it.
-      </div>
-      <div class="term">
-        <div class="term-bar">
-          <div class="dot" style="background: #ff5f57"></div>
-          <div class="dot" style="background: #febc2e"></div>
-          <div class="dot" style="background: #28c840"></div>
-        </div>
-        <div class="term-body">
-          <div>
-            <span class="prompt">❯ /chrome-extension</span>
-            <span class="cmd">a pomodoro timer that blocks distracting sites</span>
-          </div>
-          <div class="checks">✓ built &amp; reloaded into a live browser</div>
-          <div class="checks">✓ smoke checks passed · screenshot verified</div>
-          <div class="checks">
-            ✓ packaged <span class="dim">release/focus-timer-v1.0.0.zip</span>
-          </div>
-        </div>
-      </div>
+    <div class="dots">
+      <span style="background: #4285f4"></span>
+      <span style="background: #ea4335"></span>
+      <span style="background: #fbbc04"></span>
+      <span style="background: #34a853"></span>
     </div>
-    <div class="right">
-      <div class="browser">
-        <div class="b-bar">
-          <div class="dot" style="background: rgba(255, 255, 255, 0.18)"></div>
-          <div class="dot" style="background: rgba(255, 255, 255, 0.18)"></div>
-          <div class="url">chrome-extension://…/popup.html</div>
-        </div>
-        <div class="b-body">
-          <div class="ring">
-            <div class="ring-in">
-              <div class="time">21:47</div>
-              <div class="time-sub">focus session</div>
-            </div>
-          </div>
-          <div class="block-line">Blocking <b>4 distracting sites</b></div>
-          <div class="btn">Pause</div>
-        </div>
-      </div>
-      <div class="toast">✓&nbsp; All checks passed — ready for the Chrome Web Store</div>
+    <h1>Make any Chrome extension.</h1>
+    <div class="sub">Just describe it. An AI agent builds it, tests it, and ships it.</div>
+    <div class="card">
+      <span class="cmd">/chrome-extension</span>
+      <span class="idea">a pomodoro timer that blocks distracting sites</span>
+      <span class="cursor"></span>
     </div>
   </body>
 </html>

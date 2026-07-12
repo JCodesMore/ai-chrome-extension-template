@@ -26,6 +26,11 @@ try {
     deviceScaleFactor: SCALE,
     mobile: false,
   });
+  // Wait for webfonts before capturing, then settle.
+  await c.send('Runtime.evaluate', {
+    expression: 'document.fonts.ready.then(() => true)',
+    awaitPromise: true,
+  });
   await cdp.sleep(SETTLE_MS);
   const { data } = await c.send('Page.captureScreenshot', { format: 'png' });
   const out = resolve(root, 'docs/assets/preview.png');
