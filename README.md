@@ -9,6 +9,8 @@ Now you don't have to. Tell your AI agent what you want — it plans the build, 
 code, tests it in a real browser it controls by itself, fixes its own mistakes, and hands
 you a finished extension ready for the Chrome Web Store.
 
+[![Discord](https://img.shields.io/badge/Join_the_community-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/hrTSX5yTpB)
+
 <a href="https://github.com/JCodesMore/ai-chrome-extension-template/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" /></a> <a href="https://github.com/JCodesMore/ai-chrome-extension-template/stargazers"><img src="https://img.shields.io/github/stars/JCodesMore/ai-chrome-extension-template?style=flat" alt="Stars" /></a>
 
 [Quick Start](#quick-start) · [What to ask for](#what-to-ask-for) · [How it works](#how-it-works) · [Publishing](#publishing-to-the-chrome-web-store)
